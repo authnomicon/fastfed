@@ -35,6 +35,9 @@
       "http/handshake/idp"
     ]
   },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
   "devDependencies": {
     "make-node": "^0.3.0",
     "mocha": "^2.0.0",
