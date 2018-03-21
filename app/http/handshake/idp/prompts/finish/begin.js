@@ -9,6 +9,7 @@ exports = module.exports = function(store) {
     
     
     var url = uri.parse(req.locals.receiveURI, true);
+    delete url.search;
     console.log(url);
     
     url.query.provider_metadata_uri = req.locals.metadataURI;

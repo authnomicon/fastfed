@@ -8,6 +8,18 @@ exports = module.exports = function(store) {
     console.log(req.state);
     
     
+    var url = uri.parse('/fastfed/consent/application', true);
+    delete url.search;
+    console.log(url);
+    
+    if (req.locals.state) {
+      url.query.state = req.locals.state;
+    }
+    url = uri.format(url);
+    console.log(url);
+    
+    res.redirect(url);
+    
     /*
     var url = uri.parse(req.locals.receiveURI, true);
     console.log(url);
