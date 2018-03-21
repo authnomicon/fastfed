@@ -34,7 +34,8 @@
     "components": [
       "http/handshake/idp/service",
       "http/handshake/idp/prompts/start",
-      "http/handshake/idp/prompts/finish"
+      "http/handshake/idp/prompts/finish",
+      "http/handshake/idp/prompts/enable"
     ]
   },
   "dependencies": {

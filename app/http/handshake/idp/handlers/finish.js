@@ -28,6 +28,9 @@ exports = module.exports = function(imd, flow, initialize, authenticate, errorLo
     console.log(req.state);
     console.log(req.session)
     
+    
+    return res.prompt('fastfed-enable-application');
+    
     next();
   }
   
