@@ -32,6 +32,7 @@
   "assembly": {
     "namespace": "org.authnomicon/fastfed",
     "components": [
+      "http/consent/idp/service",
       "http/consent/idp/prompts/application",
       "http/handshake/idp/service",
       "http/handshake/idp/prompts/start",
@@ -39,6 +40,7 @@
     ]
   },
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.3"
   },
   "devDependencies": {

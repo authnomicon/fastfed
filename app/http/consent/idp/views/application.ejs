@@ -1,0 +1,8 @@
+<p>Enabled federation with application <%= application.displayName %>?</p>
+
+<form action="/fastfed/consent/application" method="post">
+	<div>
+	<input type="submit" value="Allow"/>
+  <input type="submit" name="cancel" value="Deny"/>
+	</div>
+</form>

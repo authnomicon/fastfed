@@ -7,7 +7,7 @@ exports = module.exports = function(begin) {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/state/Prompt';
-exports['@name'] = 'fastfed-consent-application';
+exports['@name'] = 'fastfed/consent/application';
 exports['@require'] = [
   './application/begin'
 ];

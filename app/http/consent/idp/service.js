@@ -5,7 +5,7 @@ exports = module.exports = function(applicationPromptHandler, applicationDecisio
   var router = new express.Router();
   
   router.get('/application', applicationPromptHandler);
-  router.post('/application', applicationDecisionHandler);
+  //router.post('/application', applicationDecisionHandler);
   
   // TODO: consent for initiating FastFed and releasing tenant data
   //router.get('/handshake');
