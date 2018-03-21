@@ -14,7 +14,7 @@ exports = module.exports = function(store) {
     url.query.provider_metadata_uri = req.locals.metadataURI;
     
     
-    url = url.format();
+    url = uri.format(url);
     console.log(url);
     
     res.redirect(url);
