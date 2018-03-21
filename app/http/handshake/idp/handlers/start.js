@@ -34,6 +34,7 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
     
     var options = {
       receiveURI: 'http://127.0.0.1:8080/fastfed/handshake/receive',
+      //receiveURI: 'http://www.example.com/fastfed/handshake/receive',
       metadataURI: 'https://idp.example.com/fastfed/provider-metadata'
     }
     
@@ -43,7 +44,7 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
   }
   
   
-  // http://localhost:8080/fastfed/handshake/start?provider_metadata_uri=foo
+  // http://127.0.0.1:8080/fastfed/handshake/start?provider_metadata_uri=foo
   
   return flow('fastfed-handshake',
     authenticate([ 'session', 'anonymous' ]),

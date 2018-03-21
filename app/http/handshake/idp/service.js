@@ -5,6 +5,7 @@ exports = module.exports = function(startHandler, finishHandler) {
   var router = new express.Router();
   
   router.get('/start', startHandler);
+  router.get('/finish', finishHandler);
   
   return router;
 };
@@ -16,5 +17,5 @@ exports['@implements'] = [
 exports['@path'] = '/fastfed/handshake';
 exports['@require'] = [
   './handlers/start',
-  //'./handlers/finish'
+  './handlers/finish'
 ];
