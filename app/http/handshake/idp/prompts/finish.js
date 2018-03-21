@@ -7,7 +7,7 @@ exports = module.exports = function(begin) {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/state/Prompt';
-exports['@name'] = 'fastfed-handshake-receipt';
+exports['@name'] = 'fastfed-handshake-finish';
 exports['@require'] = [
-  './receipt/begin'
+  './finish/begin'
 ];

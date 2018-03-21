@@ -32,7 +32,8 @@
   "assembly": {
     "namespace": "org.authnomicon/fastfed",
     "components": [
-      "http/handshake/idp/service"
+      "http/handshake/idp/service",
+      "http/handshake/idp/prompts/finish"
     ]
   },
   "dependencies": {

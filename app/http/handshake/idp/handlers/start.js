@@ -31,11 +31,19 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
     console.log(req.locals.app);
     console.log(req.state);
     
-    res.prompt('fastfed-handshake-receipt');
+    
+    var options = {
+      receiveURI: 'http://127.0.0.1:8080/fastfed/handshake/receive',
+      metadataURI: 'https://idp.example.com/fastfed/provider-metadata'
+    }
+    
+    res.prompt('fastfed-handshake-finish', options);
     
     //res.redirect('/fastfed/handshake/');
   }
   
+  
+  // http://localhost:8080/fastfed/handshake/start?provider_metadata_uri=foo
   
   return flow('fastfed-handshake',
     authenticate([ 'session', 'anonymous' ]),
