@@ -18,10 +18,10 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
     // TODO: Generate federation instance metadata
     // TODO: initiate a redirect to the application
     
-    md.resolveApplication(providerMetadataURI, function(err, app) {
+    md.resolveApplication(providerMetadataURI, function(err, provider) {
       if (err) { return next(err); }
       
-      req.state.app = app;
+      req.state.provider = provider;
       next();
     });
   }
