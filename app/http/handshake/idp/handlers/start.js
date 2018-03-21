@@ -21,6 +21,7 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
     md.resolveApplication(providerMetadataURI, function(err, provider) {
       if (err) { return next(err); }
       
+      req.state = req.state || { name: 'fastfed-handshake' };
       req.state.provider = provider;
       next();
     });

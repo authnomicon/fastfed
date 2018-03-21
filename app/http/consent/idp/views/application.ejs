@@ -2,6 +2,9 @@
 
 <form action="/fastfed/consent/application" method="post">
 	<div>
+  <% if (typeof state !== 'undefined') { %>
+    <input type="hidden" name="state" value="<%= state %>"/>
+  <% } %>
 	<input type="submit" value="Allow"/>
   <input type="submit" name="cancel" value="Deny"/>
 	</div>
