@@ -47,7 +47,7 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
 };
 
 exports['@require'] = [
-  '../../../metadata/main',
+  '../../../../metadata/main',
   'http://i.bixbyjs.org/http/middleware/state/flow',
   'http://i.bixbyjs.org/http/middleware/initialize',
   'http://i.bixbyjs.org/http/middleware/authenticate',

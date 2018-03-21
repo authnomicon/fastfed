@@ -12,7 +12,7 @@ describe('@authnomicon/fastfed', function() {
       expect(json.assembly.namespace).to.equal('org.authnomicon/fastfed');
       
       expect(json.assembly.components).to.have.length(1);
-      expect(json.assembly.components).to.include('http/handshake/idp');
+      expect(json.assembly.components).to.include('http/handshake/idp/service');
     });
   });
   
