@@ -8,7 +8,9 @@ exports = module.exports = function() {
     console.log(req.state);
     console.log(req.yieldState);
     console.log(req.session.state);
+    console.log(next)
     
+    res.completePrompt('/app')
   }
 
   return [
