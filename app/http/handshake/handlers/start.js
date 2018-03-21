@@ -31,6 +31,8 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
     console.log(req.locals.app);
     console.log(req.state);
     
+    res.prompt('fastfed-handshake-receipt');
+    
     //res.redirect('/fastfed/handshake/');
   }
   
