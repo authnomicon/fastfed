@@ -29,7 +29,7 @@ exports = module.exports = function(imd, flow, initialize, authenticate, errorLo
     console.log(req.session)
     
     
-    return res.prompt('fastfed/consent/application');
+    return res.prompt('fastfed-consent-application');
     
     next();
   }
