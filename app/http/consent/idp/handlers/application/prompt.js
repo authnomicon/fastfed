@@ -10,7 +10,7 @@ exports = module.exports = function(flow, initialize, authenticate, errorLogging
     
     
     // TODO: Load this based on query param
-    res.locals.application = { displayName: 'Foo' }
+    res.locals.application = { displayName: 'Foo' };
     
     res.render('fastfed/consent/application', function(err, str) {
       if (err && err.view) {
@@ -24,7 +24,7 @@ exports = module.exports = function(flow, initialize, authenticate, errorLogging
         return next(err);
       }
       res.send(str);
-    })
+    });
   }
   
   
