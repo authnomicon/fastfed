@@ -20,6 +20,6 @@ exports['@implements'] = [
 ];
 exports['@path'] = '/fastfed/consent';
 exports['@require'] = [
-  './handlers/application/prompt',
-  './handlers/application/decision'
+  './handlers/enable-application/prompt',
+  './handlers/enable-application/decision'
 ];
