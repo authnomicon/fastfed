@@ -12,9 +12,9 @@ exports = module.exports = function(flow, initialize, authenticate, errorLogging
     // TODO: Load this based on query param
     res.locals.idp = { displayName: 'Foo' };
     
-    res.render('fastfed/consent/idp', function(err, str) {
+    res.render('fastfed/application/enable-idp', function(err, str) {
       if (err && err.view) {
-        var view = path.resolve(__dirname, '../views/idp.ejs');
+        var view = path.resolve(__dirname, '../views/enable-idp.ejs');
         ejs.renderFile(view, res.locals, function(err, str) {
           if (err) { return next(err); }
           res.send(str);
