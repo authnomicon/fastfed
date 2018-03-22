@@ -8,7 +8,7 @@ exports = module.exports = function(store) {
     console.log(req.state);
     
     
-    var url = uri.parse('/fastfed/consent/idp', true);
+    var url = uri.parse('/fastfed/setup/idp', true);
     delete url.search;
     console.log(url);
     

@@ -14,7 +14,7 @@ exports['@implements'] = [
   'http://i.bixbyjs.org/http/Service',
   'http://schemas.authnomicon.org/js/http/fastfed/ApplicationConsentService'
 ];
-exports['@path'] = '/fastfed/consent';
+exports['@path'] = '/fastfed/setup';
 exports['@require'] = [
   './handlers/prompt',
   './handlers/decision'

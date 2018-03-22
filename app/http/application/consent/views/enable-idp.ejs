@@ -1,6 +1,6 @@
 <p>Enabled federation with IdP <%= idp.displayName %>?</p>
 
-<form action="/fastfed/consent/idp" method="post">
+<form action="/fastfed/setup/idp" method="post">
 	<div>
   <% if (typeof state !== 'undefined') { %>
     <input type="hidden" name="state" value="<%= state %>"/>

@@ -1,6 +1,6 @@
 <p>Enabled federation with application <%= application.displayName %>?</p>
 
-<form action="/fastfed/consent/application" method="post">
+<form action="/fastfed/setup/application" method="post">
 	<div>
   <% if (typeof state !== 'undefined') { %>
     <input type="hidden" name="state" value="<%= state %>"/>
