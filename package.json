@@ -33,10 +33,10 @@
     "namespace": "org.authnomicon/fastfed",
     "components": [
       "http/idp/handshake/service",
-      "http/idp/handshake/prompts/start",
-      "http/idp/handshake/prompts/finish",
+      "http/idp/handshake/states/start",
+      "http/idp/handshake/states/finish",
       "http/idp/consent/service",
-      "http/idp/consent/prompts/enable-application",
+      "http/idp/consent/states/enable-application",
       "http/application/handshake/service",
       "http/application/handshake/states/receipt",
       "http/application/consent/service",
