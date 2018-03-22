@@ -11,7 +11,7 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
     
     // FIXME: this won't resume, because of lack of `prev`.  Need to check this condition
     //  in flowstate
-    //req.state = req.state || { name: 'fastfed-consent-application' }
+    //req.state = req.state || { name: 'fastfed-enable-application' }
     // TODO: marshal consent in some sensible way.
     //req.state.consent = true;
     next();
@@ -20,7 +20,7 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
   
   return [
     parse('application/x-www-form-urlencoded'),
-    flow('fastfed-consent-application',
+    flow('fastfed-enable-application',
       authenticate([ 'session' ]),
       initialize(),
       process,

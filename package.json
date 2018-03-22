@@ -36,7 +36,7 @@
       "http/idp/handshake/prompts/start",
       "http/idp/handshake/prompts/finish",
       "http/idp/consent/service",
-      "http/idp/consent/prompts/application",
+      "http/idp/consent/prompts/enable-application",
       "http/application/handshake/service",
       "http/application/handshake/prompts/receipt",
       "http/application/consent/service",
