@@ -18,7 +18,7 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
     md.resolveIdP(providerMetadataURI, function(err, provider) {
       if (err) { return next(err); }
       
-      req.state = req.state || { name: 'fastfed-handshake-receipt' };
+      //req.state = req.state || { name: 'fastfed-handshake-receipt' };
       req.state.provider = provider;
       req.state.state = state;
       //console.log('RESOLVED PROVIDER');

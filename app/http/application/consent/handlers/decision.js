@@ -4,7 +4,8 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
   
   
   function process(req, res, next) {
-    //console.log('FASTFED CONSENT FOR IDP ENABLE POST?');
+    console.log('DECISION: fastfed-enable-idp');
+    console.log(req.body)
     //console.log(req.query);
     //console.log(req.body);
     //console.log(req.state);
