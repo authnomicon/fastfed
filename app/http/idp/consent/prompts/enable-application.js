@@ -6,7 +6,7 @@ exports = module.exports = function(begin) {
   };
 };
 
-exports['@implements'] = 'http://i.bixbyjs.org/http/state/Prompt';
+exports['@implements'] = 'http://i.bixbyjs.org/http/state/State';
 exports['@name'] = 'fastfed-enable-application';
 exports['@require'] = [
   './enable-application/begin'

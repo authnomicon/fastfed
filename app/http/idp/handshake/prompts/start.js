@@ -6,7 +6,7 @@ exports = module.exports = function(resume) {
   };
 };
 
-exports['@implements'] = 'http://i.bixbyjs.org/http/state/Prompt';
+exports['@implements'] = 'http://i.bixbyjs.org/http/state/State';
 exports['@name'] = 'fastfed-handshake';
 exports['@require'] = [
   './start/resume'
