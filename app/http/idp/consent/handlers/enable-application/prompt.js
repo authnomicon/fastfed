@@ -4,9 +4,9 @@ exports = module.exports = function(flow, initialize, authenticate, errorLogging
   
   
   function render(req, res, next) {
-    console.log('FASTFED CONSENT FOR APP ENABLE?');
-    console.log(req.query);
-    console.log(req.state);
+    //console.log('FASTFED CONSENT FOR APP ENABLE?');
+    //console.log(req.query);
+    //console.log(req.state);
     
     
     // TODO: Load this based on query param

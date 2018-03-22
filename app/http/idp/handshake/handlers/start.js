@@ -8,7 +8,7 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
   // client ID does it use?  Can it authenticate?  Should it do PKCE?
   
   function resolveApplication(req, res, next) {
-    console.log('FASTFED HANDHSAKE START?');
+    //console.log('FASTFED HANDHSAKE START?');
     
     // TODO: query params
     
@@ -28,9 +28,9 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
   }
   
   function obtainConsent(req, res, next) {
-    console.log('GET CONSENT: ');
-    console.log(req.locals.app);
-    console.log(req.state);
+    //console.log('GET CONSENT: ');
+    //console.log(req.locals.app);
+    //console.log(req.state);
     
     
     var options = {

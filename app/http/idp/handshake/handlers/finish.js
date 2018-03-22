@@ -6,8 +6,8 @@ exports = module.exports = function(imd, flow, initialize, authenticate, errorLo
   }
   
   function resolveApplicationInstance(req, res, next) {
-    console.log('FASTFED HANDHSAKE FINISH?');
-    console.log(req.session.state);
+    //console.log('FASTFED HANDHSAKE FINISH?');
+    //console.log(req.session.state);
     
     // TODO: query params
     
@@ -23,10 +23,10 @@ exports = module.exports = function(imd, flow, initialize, authenticate, errorLo
   
   
   function obtainConsent(req, res, next) {
-    console.log('FASTFED HANDHSAKE FINISH?');
-    console.log(req.query);
-    console.log(req.state);
-    console.log(req.session)
+    //console.log('FASTFED HANDHSAKE FINISH?');
+    //console.log(req.query);
+    //console.log(req.state);
+    //console.log(req.session)
     
     
     return res.prompt('fastfed-enable-application');

@@ -4,10 +4,10 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
   
   
   function process(req, res, next) {
-    console.log('FASTFED CONSENT FOR APP ENABLE POST?');
-    console.log(req.query);
-    console.log(req.body);
-    console.log(req.state);
+    //console.log('FASTFED CONSENT FOR APP ENABLE POST?');
+    //console.log(req.query);
+    //console.log(req.body);
+    //console.log(req.state);
     
     // FIXME: this won't resume, because of lack of `prev`.  Need to check this condition
     //  in flowstate
