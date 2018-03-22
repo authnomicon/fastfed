@@ -32,14 +32,14 @@
   "assembly": {
     "namespace": "org.authnomicon/fastfed",
     "components": [
-      "http/consent/idp/service",
-      "http/consent/idp/prompts/application",
-      "http/consent/application/service",
-      "http/consent/application/prompts/idp",
-      "http/handshake/idp/service",
-      "http/handshake/idp/prompts/start",
-      "http/handshake/idp/prompts/finish",
-      "http/handshake/application/service"
+      "http/idp/handshake/service",
+      "http/idp/handshake/prompts/start",
+      "http/idp/handshake/prompts/finish",
+      "http/idp/consent/service",
+      "http/idp/consent/prompts/application",
+      "http/application/handshake/service",
+      "http/application/consent/service",
+      "http/application/consent/prompts/idp"
     ]
   },
   "dependencies": {

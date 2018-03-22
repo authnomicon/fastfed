@@ -12,14 +12,14 @@ describe('@authnomicon/fastfed', function() {
       expect(json.assembly.namespace).to.equal('org.authnomicon/fastfed');
       
       expect(json.assembly.components).to.have.length(8);
-      expect(json.assembly.components).to.include('http/consent/idp/service');
-      expect(json.assembly.components).to.include('http/consent/idp/prompts/application');
-      expect(json.assembly.components).to.include('http/consent/application/service');
-      expect(json.assembly.components).to.include('http/consent/application/prompts/idp');
-      expect(json.assembly.components).to.include('http/handshake/idp/service');
-      expect(json.assembly.components).to.include('http/handshake/idp/prompts/start');
-      expect(json.assembly.components).to.include('http/handshake/idp/prompts/finish');
-      expect(json.assembly.components).to.include('http/handshake/application/service');
+      expect(json.assembly.components).to.include('http/idp/handshake/service');
+      expect(json.assembly.components).to.include('http/idp/handshake/prompts/start');
+      expect(json.assembly.components).to.include('http/idp/handshake/prompts/finish');
+      expect(json.assembly.components).to.include('http/idp/consent/service');
+      expect(json.assembly.components).to.include('http/idp/consent/prompts/application');
+      expect(json.assembly.components).to.include('http/application/handshake/service');
+      expect(json.assembly.components).to.include('http/application/consent/service');
+      expect(json.assembly.components).to.include('http/application/consent/prompts/idp');
     });
   });
   
