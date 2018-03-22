@@ -47,8 +47,12 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
       console.log('RESOLVED INSTANCE');
       console.log(idp)
       
-      //next();
+      next();
     });
+  }
+  
+  function obtainConsent(req, res, next) {
+    return res.prompt('fastfed-consent-idp');
   }
   
   
@@ -58,6 +62,7 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
     resolveIdP,
     providerAuthorization,
     resolveIdPInstance,
+    obtainConsent,
     errorLogging(),
   { external: true });
 };
