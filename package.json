@@ -34,6 +34,7 @@
     "components": [
       "http/consent/idp/service",
       "http/consent/idp/prompts/application",
+      "http/consent/application/service",
       "http/consent/application/prompts/idp",
       "http/handshake/idp/service",
       "http/handshake/idp/prompts/start",
