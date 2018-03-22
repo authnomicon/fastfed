@@ -18,9 +18,9 @@ describe('@authnomicon/fastfed', function() {
       expect(json.assembly.components).to.include('http/idp/consent/service');
       expect(json.assembly.components).to.include('http/idp/consent/prompts/enable-application');
       expect(json.assembly.components).to.include('http/application/handshake/service');
-      expect(json.assembly.components).to.include('http/application/handshake/prompts/receipt');
+      expect(json.assembly.components).to.include('http/application/handshake/states/receipt');
       expect(json.assembly.components).to.include('http/application/consent/service');
-      expect(json.assembly.components).to.include('http/application/consent/prompts/enable-idp');
+      expect(json.assembly.components).to.include('http/application/consent/states/enable-idp');
     });
   });
   

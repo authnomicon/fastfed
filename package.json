@@ -38,9 +38,9 @@
       "http/idp/consent/service",
       "http/idp/consent/prompts/enable-application",
       "http/application/handshake/service",
-      "http/application/handshake/prompts/receipt",
+      "http/application/handshake/states/receipt",
       "http/application/consent/service",
-      "http/application/consent/prompts/enable-idp"
+      "http/application/consent/states/enable-idp"
     ]
   },
   "dependencies": {
