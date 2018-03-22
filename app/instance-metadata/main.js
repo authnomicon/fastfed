@@ -1,6 +1,19 @@
 exports = module.exports = function(resolver) {
   var api = {};
   
+  api.resolveIdP = function(uri, options, cb) {
+    if (typeof options == 'function') {
+      cb = options;
+      options = undefined;
+    }
+    options = options || {};
+    
+    resolver.resolve(uri, function(err, config) {
+      if (err) { return cb(err); }
+      return cb(null, config.idp);
+    });
+  };
+  
   api.resolveApplication = function(uri, options, cb) {
     if (typeof options == 'function') {
       cb = options;

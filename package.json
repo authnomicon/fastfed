@@ -36,7 +36,8 @@
       "http/consent/idp/prompts/application",
       "http/handshake/idp/service",
       "http/handshake/idp/prompts/start",
-      "http/handshake/idp/prompts/finish"
+      "http/handshake/idp/prompts/finish",
+      "http/handshake/application/service"
     ]
   },
   "dependencies": {
