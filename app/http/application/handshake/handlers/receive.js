@@ -5,8 +5,8 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
   function resolveIdP(req, res, next) {
     // TODO: query params
     
-    console.log('APP RECEIVE HANDSHAKE');
-    console.log(req.query);
+    //console.log('APP RECEIVE HANDSHAKE');
+    //console.log(req.query);
     
     var providerMetadataURI = req.query.provider_metadata_uri // or from body
       , instanceMetadataURI = req.query.instance_metadata_uri
@@ -21,8 +21,8 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
       req.state = req.state || { name: 'fastfed-handshake-receipt' };
       req.state.provider = provider;
       req.state.state = state;
-      console.log('RESOLVED PROVIDER');
-      console.log(provider)
+      //console.log('RESOLVED PROVIDER');
+      //console.log(provider)
       
       next();
     });
@@ -34,8 +34,8 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
   }
   
   function resolveIdPInstance(req, res, next) {
-    console.log('FASTFED HANDHSAKE FINISH?');
-    console.log(req.session.state);
+    //console.log('FASTFED HANDHSAKE FINISH?');
+    //console.log(req.session.state);
     
     // TODO: query params
     
@@ -45,8 +45,8 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
       if (err) { return next(err); }
       
       req.state.idp = idp;
-      console.log('RESOLVED INSTANCE');
-      console.log(idp)
+      //console.log('RESOLVED INSTANCE');
+      //console.log(idp)
       
       next();
     });

@@ -3,20 +3,20 @@ exports = module.exports = function(store) {
 
 
   function redirect(req, res, next) {
-    console.log('START FASTFED ENABLE APP?');
-    console.log(req.locals);
-    console.log(req.state);
+    //console.log('START FASTFED ENABLE APP?');
+    //console.log(req.locals);
+    //console.log(req.state);
     
     
     var url = uri.parse('/fastfed/setup/idp', true);
     delete url.search;
-    console.log(url);
+    //console.log(url);
     
     if (req.locals.state) {
       url.query.state = req.locals.state;
     }
     url = uri.format(url);
-    console.log(url);
+    //console.log(url);
     
     res.redirect(url);
     
