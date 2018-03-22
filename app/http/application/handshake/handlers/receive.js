@@ -20,6 +20,7 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
       
       req.state = req.state || { name: 'fastfed-handshake-receipt' };
       req.state.provider = provider;
+      req.state.state = state;
       console.log('RESOLVED PROVIDER');
       console.log(provider)
       
