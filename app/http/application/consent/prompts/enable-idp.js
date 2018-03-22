@@ -7,7 +7,7 @@ exports = module.exports = function(begin) {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/state/Prompt';
-exports['@name'] = 'fastfed-consent-idp';
+exports['@name'] = 'fastfed-enable-idp';
 exports['@require'] = [
-  './idp/begin'
+  './enable-idp/begin'
 ];

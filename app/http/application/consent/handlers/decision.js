@@ -20,7 +20,7 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
   
   return [
     parse('application/x-www-form-urlencoded'),
-    flow('fastfed-consent-idp',
+    flow('fastfed-enable-idp',
       authenticate([ 'session' ]),
       initialize(),
       process,

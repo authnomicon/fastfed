@@ -40,7 +40,7 @@
       "http/application/handshake/service",
       "http/application/handshake/prompts/receipt",
       "http/application/consent/service",
-      "http/application/consent/prompts/idp"
+      "http/application/consent/prompts/enable-idp"
     ]
   },
   "dependencies": {

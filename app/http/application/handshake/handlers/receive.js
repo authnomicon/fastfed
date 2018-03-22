@@ -53,7 +53,7 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
   }
   
   function obtainConsent(req, res, next) {
-    return res.prompt('fastfed-consent-idp');
+    return res.prompt('fastfed-enable-idp');
   }
   
   

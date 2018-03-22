@@ -28,7 +28,7 @@ exports = module.exports = function(flow, initialize, authenticate, errorLogging
   }
   
   
-  return flow('fastfed-consent-idp',
+  return flow('fastfed-enable-idp',
     authenticate([ 'session' ]),
     initialize(),
     render,
