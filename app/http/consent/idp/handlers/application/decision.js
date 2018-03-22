@@ -3,11 +3,18 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
     , ejs = require('ejs')
   
   
-  function render(req, res, next) {
+  function process(req, res, next) {
     console.log('FASTFED CONSENT FOR APP ENABLE POST?');
     console.log(req.query);
     console.log(req.body);
     console.log(req.state);
+    
+    // FIXME: this won't resume, because of lack of `prev`.  Need to check this condition
+    //  in flowstate
+    //req.state = req.state || { name: 'fastfed-consent-application' }
+    // TODO: marshal consent in some sensible way.
+    //req.state.consent = true;
+    next();
   }
   
   
@@ -16,7 +23,7 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
     flow('fastfed-consent-application',
       authenticate([ 'session' ]),
       initialize(),
-      render,
+      process,
       errorLogging()
     )
   ];

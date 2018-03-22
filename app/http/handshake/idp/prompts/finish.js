@@ -1,13 +1,14 @@
-exports = module.exports = function(begin) {
+exports = module.exports = function(begin, resume) {
   
   return {
     begin: begin,
-    resume: null
+    resume: resume
   };
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/state/Prompt';
 exports['@name'] = 'fastfed-handshake-finish';
 exports['@require'] = [
-  './finish/begin'
+  './finish/begin',
+  './finish/resume'
 ];
