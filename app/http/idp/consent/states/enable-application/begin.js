@@ -3,6 +3,10 @@ exports = module.exports = function(store) {
 
 
   function redirect(req, res, next) {
+    console.log('START: fastfed-enable-application');
+    console.log(req.state);
+    console.log(req.locals);
+    
     //console.log('START FASTFED ENABLE APP?');
     //console.log(req.locals);
     //console.log(req.state);
@@ -12,9 +16,11 @@ exports = module.exports = function(store) {
     delete url.search;
     //console.log(url);
     
+    /*
     if (req.locals.state) {
       url.query.state = req.locals.state;
     }
+    */
     url = uri.format(url);
     //console.log(url);
     

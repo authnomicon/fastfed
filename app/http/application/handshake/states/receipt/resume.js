@@ -20,9 +20,9 @@ exports = module.exports = function() {
     url = uri.format(url);
     //console.log(url);
     
-    //res.redirect(url);
+    res.redirect(url);
     
-    res.completePrompt(url)
+    //res.completePrompt(url)
   }
 
   return [

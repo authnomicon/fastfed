@@ -10,7 +10,9 @@ exports = module.exports = function() {
     //console.log(req.session.state);
     //console.log(next)
     
-    res.completePrompt(next);
+    next();
+    
+    //res.completePrompt(next);
   }
 
   return [
