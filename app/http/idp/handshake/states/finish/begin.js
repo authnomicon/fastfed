@@ -18,6 +18,8 @@ exports = module.exports = function(store) {
     url = uri.format(url);
     //console.log(url);
     
+    
+    req.state.required();
     res.redirect(url);
   }
 

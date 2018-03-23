@@ -3,6 +3,10 @@ exports = module.exports = function() {
 
 
   function enableFederation(req, res, next) {
+    console.log('RESUME: fastfed-handshake-finish');
+    console.log(req.body)
+    console.log(req.state);
+    
     //console.log('RESUME FINISH HANDSHAKE');
     //console.log(req.locals);
     //console.log(req.state);

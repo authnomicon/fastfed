@@ -3,6 +3,10 @@ exports = module.exports = function() {
 
 
   function redirect(req, res, next) {
+    console.log('RESUME: fastfed-handshake');
+    console.log(req.body)
+    console.log(req.state);
+    
     //console.log('START FASTFED HANDSHAKE RESUME');
     //console.log(req.locals);
     //console.log(req.state);
