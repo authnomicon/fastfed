@@ -16,6 +16,12 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
     next();
   }
   
+  function errorHandler(err, req, res, next) {
+    console.log('DECISION-ERROR: fastfed-enable-application');
+    console.log(err)
+    next(err);
+  }
+  
   
   return [
     parse('application/x-www-form-urlencoded'),
