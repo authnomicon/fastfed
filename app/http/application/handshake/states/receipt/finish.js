@@ -3,18 +3,10 @@ exports = module.exports = function() {
 
 
   function redirect(req, res, next) {
-    console.log('******* RESUME: fastfed-handshake-receipt');
+    console.log('******* FINISH: fastfed-handshake-receipt');
     console.log(req.body)
     console.log(req.state);
     
-    //console.log('RESUME FASTFED HANDSHAKE RECEIPT');
-    //console.log(req.locals);
-    //console.log(req.state);
-    //console.log(req.yieldState);
-    //console.log(req.session.state);
-    //console.log(next)
-    
-    /*
     var url = uri.parse('/fastfed/handshake/finish', true);
     delete url.search;
     //console.log(url);
@@ -26,9 +18,6 @@ exports = module.exports = function() {
     //console.log(url);
     
     res.redirect(url);
-    */
-    
-    next();
     
     //res.completePrompt(url)
   }
