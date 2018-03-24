@@ -3,7 +3,7 @@ exports = module.exports = function() {
 
 
   function redirect(req, res, next) {
-    console.log('RESUME: fastfed-handshake');
+    console.log('FINISH: fastfed-handshake');
     console.log(req.body)
     console.log(req.state);
     
@@ -14,8 +14,7 @@ exports = module.exports = function() {
     //console.log(req.session.state);
     //console.log(next)
     
-    //res.redirect('/app')
-    next();
+    res.redirect('/app')
   }
 
   return [
