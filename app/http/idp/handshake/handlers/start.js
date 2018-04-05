@@ -1,4 +1,4 @@
-exports = module.exports = function(md, flow, initialize, authenticate, errorLogging) {
+exports = module.exports = function(md, ceremony, initialize, authenticate, errorLogging) {
   
   
   // TODO: if not authenticated, redirect to login url, with return_to
@@ -47,7 +47,7 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
   
   // http://127.0.0.1:8080/fastfed/handshake/start?provider_metadata_uri=foo
   
-  return flow('fastfed-handshake',
+  return ceremony('fastfed-handshake',
     authenticate([ 'session', 'anonymous' ]),
     initialize(),
     resolveApplication,
@@ -58,7 +58,7 @@ exports = module.exports = function(md, flow, initialize, authenticate, errorLog
 
 exports['@require'] = [
   '../../../../metadata/main',
-  'http://i.bixbyjs.org/http/middleware/state/flow',
+  'http://i.bixbyjs.org/http/middleware/ceremony',
   'http://i.bixbyjs.org/http/middleware/initialize',
   'http://i.bixbyjs.org/http/middleware/authenticate',
   'http://i.bixbyjs.org/http/middleware/errorLogging'

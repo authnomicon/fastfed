@@ -1,4 +1,4 @@
-exports = module.exports = function(imd, md, flow, initialize, authenticate, errorLogging) {
+exports = module.exports = function(imd, md, ceremony, initialize, authenticate, errorLogging) {
   
   
   
@@ -57,7 +57,7 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
   }
   
   
-  return flow('fastfed-handshake-receipt',
+  return ceremony('fastfed-handshake-receipt',
     authenticate([ 'session', 'anonymous' ]),
     initialize(),
     resolveIdP,
@@ -71,7 +71,7 @@ exports = module.exports = function(imd, md, flow, initialize, authenticate, err
 exports['@require'] = [
   '../../../../instance-metadata/main',
   '../../../../metadata/main',
-  'http://i.bixbyjs.org/http/middleware/state/flow',
+  'http://i.bixbyjs.org/http/middleware/ceremony',
   'http://i.bixbyjs.org/http/middleware/initialize',
   'http://i.bixbyjs.org/http/middleware/authenticate',
   'http://i.bixbyjs.org/http/middleware/errorLogging'

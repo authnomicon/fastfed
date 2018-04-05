@@ -1,4 +1,4 @@
-exports = module.exports = function(parse, flow, initialize, authenticate, errorLogging) {
+exports = module.exports = function(parse, ceremony, initialize, authenticate, errorLogging) {
   var path = require('path')
     , ejs = require('ejs')
   
@@ -25,7 +25,7 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
   
   return [
     parse('application/x-www-form-urlencoded'),
-    flow('fastfed-enable-application',
+    ceremony('fastfed-enable-application',
       authenticate([ 'session' ]),
       initialize(),
       process,
@@ -36,7 +36,7 @@ exports = module.exports = function(parse, flow, initialize, authenticate, error
 
 exports['@require'] = [
   'http://i.bixbyjs.org/http/middleware/parse',
-  'http://i.bixbyjs.org/http/middleware/state/flow',
+  'http://i.bixbyjs.org/http/middleware/ceremony',
   'http://i.bixbyjs.org/http/middleware/initialize',
   'http://i.bixbyjs.org/http/middleware/authenticate',
   'http://i.bixbyjs.org/http/middleware/errorLogging'
