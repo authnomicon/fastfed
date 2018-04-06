@@ -19,7 +19,7 @@ exports = module.exports = function(store) {
     //console.log(url);
     
     
-    req.state.required();
+    req.state.touch();
     res.redirect(url);
   }
 
