@@ -1,12 +1,12 @@
 exports = module.exports = function(begin, resume) {
   
   return {
-    begin: begin,
+    launch: begin,
     resume: resume
   };
 };
 
-exports['@implements'] = 'http://i.bixbyjs.org/http/state/State';
+exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
 exports['@name'] = 'fastfed-handshake-finish';
 exports['@require'] = [
   './finish/begin',

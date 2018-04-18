@@ -1,12 +1,12 @@
 exports = module.exports = function(begin) {
   
   return {
-    begin: begin,
+    launch: begin,
     resume: null
   };
 };
 
-exports['@implements'] = 'http://i.bixbyjs.org/http/state/State';
+exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
 exports['@name'] = 'fastfed-enable-idp';
 exports['@require'] = [
   './enable-idp/begin'
