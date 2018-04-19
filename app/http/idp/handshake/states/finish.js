@@ -1,7 +1,7 @@
 exports = module.exports = function(begin, resume) {
   
   return {
-    launch: begin,
+    spawn: begin,
     resume: resume
   };
 };

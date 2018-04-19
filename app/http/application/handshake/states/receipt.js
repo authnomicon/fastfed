@@ -1,9 +1,9 @@
 exports = module.exports = function(resume, finish) {
   
   return {
-    launch: null,
+    spawn: null,
     resume: resume,
-    finish: finish
+    exit: finish
   };
 };
 
