@@ -1,4 +1,4 @@
-exports = module.exports = function(md, ceremony, initialize, authenticate, errorLogging) {
+exports = module.exports = function(md, initialize, authenticate, errorLogging, ceremony) {
   
   
   // TODO: if not authenticated, redirect to login url, with return_to
@@ -27,23 +27,6 @@ exports = module.exports = function(md, ceremony, initialize, authenticate, erro
     });
   }
   
-  function obtainConsent(req, res, next) {
-    //console.log('GET CONSENT: ');
-    //console.log(req.locals.app);
-    //console.log(req.state);
-    
-    
-    var options = {
-      receiveURI: 'http://127.0.0.1:8080/fastfed/handshake/receive',
-      //receiveURI: 'http://www.example.com/fastfed/handshake/receive',
-      metadataURI: 'https://idp.example.com/fastfed/provider-metadata'
-    }
-    
-    res.prompt('fastfed-handshake-finish', options);
-    
-    //res.redirect('/fastfed/handshake/');
-  }
-  
   
   // http://127.0.0.1:8080/fastfed/handshake/start?provider_metadata_uri=foo
   
@@ -51,15 +34,14 @@ exports = module.exports = function(md, ceremony, initialize, authenticate, erro
     authenticate([ 'session', 'anonymous' ]),
     initialize(),
     resolveApplication,
-    obtainConsent,
     errorLogging(),
   { external: true });
 };
 
 exports['@require'] = [
   '../../../../metadata/main',
-  'http://i.bixbyjs.org/http/middleware/ceremony',
   'http://i.bixbyjs.org/http/middleware/initialize',
   'http://i.bixbyjs.org/http/middleware/authenticate',
-  'http://i.bixbyjs.org/http/middleware/errorLogging'
+  'http://i.bixbyjs.org/http/middleware/errorLogging',
+  'http://i.bixbyjs.org/http/middleware/ceremony'
 ];
