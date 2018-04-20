@@ -1,4 +1,4 @@
-exports = module.exports = function(store) {
+exports = module.exports = function() {
   var uri = require('url');
 
 
