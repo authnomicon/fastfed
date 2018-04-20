@@ -16,7 +16,7 @@ exports = module.exports = function(parse, authenticate, errorLogging, ceremony)
   
   return [
     parse('application/x-www-form-urlencoded'),
-    ceremony('fastfed/setup/proceed',
+    ceremony('fastfed/setup/consent',
       authenticate([ 'session' ]),
       process,
       errorLogging()

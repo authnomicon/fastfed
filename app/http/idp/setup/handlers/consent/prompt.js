@@ -1,6 +1,6 @@
 exports = module.exports = function(authenticate, ceremony) {
   
-  return ceremony('fastfed/setup/proceed',
+  return ceremony('fastfed/setup/consent',
     authenticate([ 'session' ])
   );
 };

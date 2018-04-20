@@ -6,7 +6,7 @@ exports = module.exports = function() {
     console.log(req.yieldState);
     
     if (req.state.allow == true) { return next(); }
-    return res.prompt('fastfed/setup/proceed');
+    return res.prompt('fastfed/setup/consent');
   }
   
   function issueReceipt(req, res, next) {

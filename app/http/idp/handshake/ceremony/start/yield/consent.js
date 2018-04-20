@@ -18,6 +18,6 @@ exports = module.exports = function() {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Yield';
-exports['@result'] = 'fastfed/setup/proceed';
+exports['@result'] = 'fastfed/setup/consent';
 exports['@state'] = 'fastfed/handshake/start';
 exports['@require'] = [];

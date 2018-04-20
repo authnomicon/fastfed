@@ -7,8 +7,8 @@ exports = module.exports = function(spawn, prompt) {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
-exports['@name'] = 'fastfed/setup/proceed';
+exports['@name'] = 'fastfed/setup/consent';
 exports['@require'] = [
-  './proceed/spawn',
-  './proceed/prompt'
+  './consent/spawn',
+  './consent/prompt'
 ];

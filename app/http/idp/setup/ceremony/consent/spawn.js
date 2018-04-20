@@ -3,7 +3,7 @@ exports = module.exports = function() {
 
 
   function redirect(req, res, next) {
-    var url = uri.parse('/fastfed/setup/proceed', true);
+    var url = uri.parse('/fastfed/setup/consent', true);
     delete url.search;
     
     url = uri.format(url);

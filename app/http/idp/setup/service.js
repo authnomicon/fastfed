@@ -1,13 +1,13 @@
 exports = module.exports = function(applicationPromptHandler, applicationDecisionHandler,
-                                    proceedPromptHandler, proceedDecisionHandler) {
+                                    consentPromptHandler, consentDecisionHandler) {
   var express = require('express');
   var router = new express.Router();
   
   router.get('/application', applicationPromptHandler);
   router.post('/application', applicationDecisionHandler);
   
-  router.get('/proceed', proceedPromptHandler);
-  router.post('/proceed', proceedDecisionHandler);
+  router.get('/consent', consentPromptHandler);
+  router.post('/consent', consentDecisionHandler);
   
   return router;
 };
@@ -20,6 +20,6 @@ exports['@path'] = '/fastfed/setup';
 exports['@require'] = [
   './handlers/application/prompt',
   './handlers/application/decision',
-  './handlers/proceed/prompt',
-  './handlers/proceed/decision'
+  './handlers/consent/prompt',
+  './handlers/consent/decision'
 ];

@@ -1,6 +1,6 @@
 <p>Continue setup of application <%= application.displayName %>?</p>
 
-<form action="/fastfed/setup/proceed" method="post">
+<form action="/fastfed/setup/consent" method="post">
 	<div>
   <% if (typeof state !== 'undefined') { %>
     <input type="hidden" name="state" value="<%= state %>"/>
