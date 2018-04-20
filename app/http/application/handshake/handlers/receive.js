@@ -1,6 +1,9 @@
 exports = module.exports = function(imd, md, ceremony, initialize, authenticate, errorLogging) {
   
   
+  // TODO: Authenticate the admin?  What if this is a first deployment, and you want
+  //      to use the IdP's accounts for login?
+  
   
   function resolveIdP(req, res, next) {
     // TODO: query params
@@ -8,14 +11,14 @@ exports = module.exports = function(imd, md, ceremony, initialize, authenticate,
     //console.log('APP RECEIVE HANDSHAKE');
     //console.log(req.query);
     
-    var providerMetadataURI = req.query.provider_metadata_uri // or from body
+    var metadataURI = req.query.provider_metadata_uri // or from body
       , instanceMetadataURI = req.query.instance_metadata_uri
       , state = req.query.state
     
     // TODO: Fetch the provider meta data URI
     // TODO: Fetch instance meatadata, using authz scheme, if necessary
     
-    md.resolveIdP(providerMetadataURI, function(err, provider) {
+    md.resolveIdP(metadataURI, function(err, provider) {
       if (err) { return next(err); }
       
       //req.state = req.state || { name: 'fastfed-handshake-receipt' };

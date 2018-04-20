@@ -1,5 +1,3 @@
-// has recieve
-
 exports = module.exports = function(receiveHandler) {
   var express = require('express');
   var router = new express.Router();

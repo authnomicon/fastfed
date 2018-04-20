@@ -12,13 +12,13 @@ exports = module.exports = function(md, initialize, authenticate, errorLogging, 
     
     // TODO: query params
     
-    var providerMetadataURI = req.query.provider_metadata_uri // or from body
+    var metadataURI = req.query.provider_metadata_uri // or from body
     // TODO: Fetch this metadata URI
     // TODO: enter a consent flow
     // TODO: Generate federation instance metadata
     // TODO: initiate a redirect to the application
     
-    md.resolveApplication(providerMetadataURI, function(err, provider) {
+    md.resolveApplication(metadataURI, function(err, provider) {
       if (err) { return next(err); }
       
       //req.state = req.state || { name: 'fastfed-handshake' };
