@@ -3,9 +3,9 @@ exports = module.exports = function(prompt, resume, exit, yieldConsent, yieldFin
   return {
     prompt: prompt,
     resume: resume,
-    exit: exit
-    yield: {
-      'fastfed/setup/consent': yieldConsent
+    exit: exit,
+    yields: {
+      'fastfed/setup/consent': yieldConsent,
       'fastfed/handshake/finish': yieldFinish
     }
   };
