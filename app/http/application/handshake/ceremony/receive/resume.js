@@ -2,6 +2,8 @@ exports = module.exports = function() {
   var uri = require('url');
 
 
+  // TODO: set up any authorization grants for the Idp?
+
   function redirect(req, res, next) {
     console.log('******* RESUME: fastfed-handshake-receipt');
     console.log(req.body)
