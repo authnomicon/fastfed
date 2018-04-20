@@ -1,8 +1,8 @@
-exports = module.exports = function(resume, finish) {
+exports = module.exports = function(resume, exit) {
   
   return {
     resume: resume,
-    exit: finish
+    exit: exit
   };
 };
 
@@ -10,5 +10,5 @@ exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
 exports['@name'] = 'fastfed-handshake-receipt';
 exports['@require'] = [
   './receive/resume',
-  './receive/finish'
+  './receive/exit'
 ];
