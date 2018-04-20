@@ -6,9 +6,6 @@ exports = module.exports = function(imd, ceremony, initialize, authenticate, err
   }
   
   function resolveApplicationInstance(req, res, next) {
-    //console.log('FASTFED HANDHSAKE FINISH?');
-    //console.log(req.session.state);
-    
     // TODO: query params
     
     var instanceMetadataURI = req.query.instance_metadata_uri // or from body
@@ -22,7 +19,7 @@ exports = module.exports = function(imd, ceremony, initialize, authenticate, err
   }
   
   
-  return ceremony('fastfed-handshake-finish',
+  return ceremony('fastfed/handshake/finish',
     authenticate([ 'state', 'anonymous' ]),
     initialize(),
     providerAuthorization,

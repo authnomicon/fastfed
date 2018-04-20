@@ -8,7 +8,7 @@ exports = module.exports = function() {
       instanceMetadataURI: 'https://tenant12345.example.com/fastfed/instance-metadata'
     }
     
-    res.prompt('fastfed-handshake-finish', options);
+    res.prompt('fastfed/handshake/finish', options);
   }
   
   
