@@ -1,12 +1,14 @@
-exports = module.exports = function(spawn) {
+exports = module.exports = function(spawn, prompt) {
   
   return {
-    spawn: spawn
+    spawn: spawn,
+    prompt: prompt
   };
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
 exports['@name'] = 'fastfed-enable-idp';
 exports['@require'] = [
-  './ceremony/spawn'
+  './ceremony/spawn',
+  './ceremony/prompt'
 ];
