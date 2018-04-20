@@ -1,4 +1,4 @@
-exports = module.exports = function(parse, ceremony, initialize, authenticate, errorLogging) {
+exports = module.exports = function(parse, authenticate, errorLogging, ceremony) {
   var path = require('path')
     , ejs = require('ejs')
   
@@ -36,8 +36,7 @@ exports = module.exports = function(parse, ceremony, initialize, authenticate, e
 
 exports['@require'] = [
   'http://i.bixbyjs.org/http/middleware/parse',
-  'http://i.bixbyjs.org/http/middleware/ceremony',
-  'http://i.bixbyjs.org/http/middleware/initialize',
   'http://i.bixbyjs.org/http/middleware/authenticate',
-  'http://i.bixbyjs.org/http/middleware/errorLogging'
+  'http://i.bixbyjs.org/http/middleware/errorLogging',
+  'http://i.bixbyjs.org/http/middleware/ceremony'
 ];
