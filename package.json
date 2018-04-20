@@ -38,7 +38,7 @@
       "http/idp/consent/service",
       "http/idp/consent/states/enable-application",
       "http/application/handshake/service",
-      "http/application/handshake/states/receipt",
+      "http/application/handshake/ceremony/receive",
       "http/application/consent/service",
       "http/application/consent/states/enable-idp"
     ]
