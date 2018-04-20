@@ -1,7 +1,4 @@
-exports = module.exports = function(parse, ceremony, initialize, authenticate, errorLogging) {
-  var path = require('path')
-    , ejs = require('ejs')
-  
+exports = module.exports = function(parse, authenticate, errorLogging, ceremony) {
   
   function process(req, res, next) {
     console.log('DECISION: fastfed-enable-idp');
@@ -21,17 +18,15 @@ exports = module.exports = function(parse, ceremony, initialize, authenticate, e
     parse('application/x-www-form-urlencoded'),
     ceremony('fastfed-enable-idp',
       authenticate([ 'session' ]),
-      initialize(),
-      process,
-      errorLogging()
-    )
+      process
+    ),
+    errorLogging()
   ];
 };
 
 exports['@require'] = [
   'http://i.bixbyjs.org/http/middleware/parse',
-  'http://i.bixbyjs.org/http/middleware/ceremony',
-  'http://i.bixbyjs.org/http/middleware/initialize',
   'http://i.bixbyjs.org/http/middleware/authenticate',
-  'http://i.bixbyjs.org/http/middleware/errorLogging'
+  'http://i.bixbyjs.org/http/middleware/errorLogging',
+  'http://i.bixbyjs.org/http/middleware/ceremony'
 ];
