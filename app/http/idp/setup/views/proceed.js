@@ -1,0 +1,11 @@
+<p>Continue setup of application <%= application.displayName %>?</p>
+
+<form action="/fastfed/setup/proceed" method="post">
+	<div>
+  <% if (typeof state !== 'undefined') { %>
+    <input type="hidden" name="state" value="<%= state %>"/>
+  <% } %>
+	<input type="submit" value="Allow"/>
+  <input type="submit" name="cancel" value="Deny"/>
+	</div>
+</form>
