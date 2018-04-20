@@ -1,10 +1,6 @@
 exports = module.exports = function(parse, authenticate, errorLogging, ceremony) {
   
   function process(req, res, next) {
-    console.log('DECISION: fastfed-enable-idp');
-    console.log(req.body)
-    console.log(req.state);
-    
     // FIXME: this won't resume, because of lack of `prev`.  Need to check this condition
     //  in flowstate
     //req.state = req.state || { name: 'fastfed-consent-application' }
@@ -16,7 +12,7 @@ exports = module.exports = function(parse, authenticate, errorLogging, ceremony)
   
   return [
     parse('application/x-www-form-urlencoded'),
-    ceremony('fastfed-enable-idp',
+    ceremony('fastfed/setup/idp',
       authenticate([ 'session' ]),
       process
     ),

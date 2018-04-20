@@ -1,7 +1,7 @@
 exports = module.exports = function(authenticate, ceremony) {
   
   // TODO: exit error handling.
-  return ceremony('fastfed-enable-idp',
+  return ceremony('fastfed/setup/idp',
     authenticate([ 'session' ])
   );
 };

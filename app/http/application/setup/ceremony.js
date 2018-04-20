@@ -7,7 +7,7 @@ exports = module.exports = function(spawn, prompt) {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
-exports['@name'] = 'fastfed-enable-idp';
+exports['@name'] = 'fastfed/setup/idp';
 exports['@require'] = [
   './ceremony/spawn',
   './ceremony/prompt'

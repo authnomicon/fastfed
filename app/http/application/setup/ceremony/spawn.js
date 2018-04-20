@@ -3,10 +3,6 @@ exports = module.exports = function() {
 
 
   function redirect(req, res, next) {
-    console.log('START: fastfed-enable-idp');
-    console.log(req.state);
-    console.log(req.locals);
-    
     
     var url = uri.parse('/fastfed/setup/idp', true);
     delete url.search;
