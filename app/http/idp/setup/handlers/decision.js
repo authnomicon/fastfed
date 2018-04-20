@@ -16,18 +16,11 @@ exports = module.exports = function(parse, authenticate, errorLogging, ceremony)
     next();
   }
   
-  function errorHandler(err, req, res, next) {
-    console.log('DECISION-ERROR: fastfed-enable-application');
-    console.log(err)
-    next(err);
-  }
-  
   
   return [
     parse('application/x-www-form-urlencoded'),
     ceremony('fastfed-enable-application',
       authenticate([ 'session' ]),
-      initialize(),
       process,
       errorLogging()
     )
