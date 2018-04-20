@@ -1,9 +1,13 @@
-exports = module.exports = function(prompt, resume, exit) {
+exports = module.exports = function(prompt, resume, exit, yieldConsent, yieldFinish) {
   
   return {
     prompt: prompt,
     resume: resume,
     exit: exit
+    yield: {
+      'fastfed/setup/consent': yieldConsent
+      'fastfed/handshake/finish': yieldFinish
+    }
   };
 };
 
@@ -12,5 +16,7 @@ exports['@name'] = 'fastfed/handshake/start';
 exports['@require'] = [
   './start/prompt',
   './start/resume',
-  './start/exit'
+  './start/exit',
+  './start/yield/consent',
+  './start/yield/finish'
 ];

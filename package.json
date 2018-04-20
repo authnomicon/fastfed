@@ -34,8 +34,6 @@
     "components": [
       "http/idp/handshake/service",
       "http/idp/handshake/ceremony/start",
-      "http/idp/handshake/ceremony/start/yield/consent",
-      "http/idp/handshake/ceremony/start/yield/finish",
       "http/idp/handshake/ceremony/finish",
       "http/idp/setup/service",
       "http/idp/setup/ceremony/application",

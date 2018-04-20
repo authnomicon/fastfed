@@ -11,12 +11,13 @@ describe('@authnomicon/fastfed', function() {
     it('should have assembly metadata', function() {
       expect(json.assembly.namespace).to.equal('org.authnomicon/fastfed');
       
-      expect(json.assembly.components).to.have.length(9);
+      expect(json.assembly.components).to.have.length(10);
       expect(json.assembly.components).to.include('http/idp/handshake/service');
       expect(json.assembly.components).to.include('http/idp/handshake/ceremony/start');
       expect(json.assembly.components).to.include('http/idp/handshake/ceremony/finish');
       expect(json.assembly.components).to.include('http/idp/setup/service');
       expect(json.assembly.components).to.include('http/idp/setup/ceremony/application');
+      expect(json.assembly.components).to.include('http/idp/setup/ceremony/consent');
       expect(json.assembly.components).to.include('http/application/handshake/service');
       expect(json.assembly.components).to.include('http/application/handshake/ceremony/receive');
       expect(json.assembly.components).to.include('http/application/setup/service');
