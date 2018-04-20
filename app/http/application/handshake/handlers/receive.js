@@ -55,10 +55,6 @@ exports = module.exports = function(imd, md, ceremony, initialize, authenticate,
     });
   }
   
-  function obtainConsent(req, res, next) {
-    return res.prompt('fastfed-enable-idp');
-  }
-  
   
   return ceremony('fastfed-handshake-receipt',
     authenticate([ 'session', 'anonymous' ]),
@@ -66,7 +62,6 @@ exports = module.exports = function(imd, md, ceremony, initialize, authenticate,
     resolveIdP,
     providerAuthorization,
     resolveIdPInstance,
-    obtainConsent,
     errorLogging(),
   { external: true });
 };
