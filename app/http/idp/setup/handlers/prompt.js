@@ -12,9 +12,9 @@ exports = module.exports = function(ceremony, initialize, authenticate, errorLog
     // TODO: Load this based on query param
     res.locals.application = { displayName: 'Foo' };
     
-    res.render('fastfed/idp/enable-application', function(err, str) {
+    res.render('fastfed/setup/application', function(err, str) {
       if (err && err.view) {
-        var view = path.resolve(__dirname, '../../views/enable-application.ejs');
+        var view = path.resolve(__dirname, '../views/prompt.ejs');
         ejs.renderFile(view, res.locals, function(err, str) {
           if (err) { return next(err); }
           res.send(str);

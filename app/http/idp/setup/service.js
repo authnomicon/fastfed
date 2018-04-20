@@ -1,15 +1,9 @@
-// has start and finish
-
-exports = module.exports = function(applicationPromptHandler, applicationDecisionHandler) {
+exports = module.exports = function(promptHandler, decisionHandler) {
   var express = require('express');
   var router = new express.Router();
   
-  router.get('/application', applicationPromptHandler);
-  router.post('/application', applicationDecisionHandler);
-  
-  // TODO: consent for initiating FastFed and releasing tenant data
-  //router.get('/handshake');
-  //router.post('/handshake');
+  router.get('/application', promptHandler);
+  router.post('/application', decisionHandler);
   
   return router;
 };
@@ -20,6 +14,6 @@ exports['@implements'] = [
 ];
 exports['@path'] = '/fastfed/setup';
 exports['@require'] = [
-  './handlers/enable-application/prompt',
-  './handlers/enable-application/decision'
+  './handlers/prompt',
+  './handlers/decision'
 ];
