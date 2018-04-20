@@ -7,7 +7,7 @@ exports = module.exports = function(spawn, prompt) {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
-exports['@name'] = 'fastfed-enable-application';
+exports['@name'] = 'fastfed/setup/application';
 exports['@require'] = [
   './ceremony/spawn',
   './ceremony/prompt'

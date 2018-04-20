@@ -4,9 +4,6 @@ exports = module.exports = function(parse, authenticate, errorLogging, ceremony)
   
   
   function process(req, res, next) {
-    console.log('DECISION: fastfed-enable-application');
-    console.log(req.body)
-    console.log(req.state);
     
     // FIXME: this won't resume, because of lack of `prev`.  Need to check this condition
     //  in flowstate
@@ -19,7 +16,7 @@ exports = module.exports = function(parse, authenticate, errorLogging, ceremony)
   
   return [
     parse('application/x-www-form-urlencoded'),
-    ceremony('fastfed-enable-application',
+    ceremony('fastfed/setup/application',
       authenticate([ 'session' ]),
       process,
       errorLogging()

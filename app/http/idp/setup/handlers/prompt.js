@@ -1,6 +1,6 @@
 exports = module.exports = function(authenticate, ceremony) {
   
-  return ceremony('fastfed-enable-application',
+  return ceremony('fastfed/setup/application',
     authenticate([ 'session' ])
   );
 };
