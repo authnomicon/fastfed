@@ -1,5 +1,3 @@
-// has start and finish
-
 exports = module.exports = function(startHandler, finishHandler) {
   var express = require('express');
   var router = new express.Router();
