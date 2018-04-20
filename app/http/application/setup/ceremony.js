@@ -1,13 +1,12 @@
-exports = module.exports = function(begin) {
+exports = module.exports = function(spawn) {
   
   return {
-    spawn: begin,
-    resume: null
+    spawn: spawn
   };
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
 exports['@name'] = 'fastfed-enable-idp';
 exports['@require'] = [
-  './enable-idp/begin'
+  './ceremony/spawn'
 ];
