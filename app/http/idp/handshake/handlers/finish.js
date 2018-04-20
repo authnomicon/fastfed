@@ -22,25 +22,11 @@ exports = module.exports = function(imd, ceremony, initialize, authenticate, err
   }
   
   
-  function obtainConsent(req, res, next) {
-    //console.log('FASTFED HANDHSAKE FINISH?');
-    //console.log(req.query);
-    //console.log(req.state);
-    //console.log(req.session)
-    
-    
-    return res.prompt('fastfed-enable-application');
-    
-    next();
-  }
-  
-  
   return ceremony('fastfed-handshake-finish',
     authenticate([ 'state', 'anonymous' ]),
     initialize(),
     providerAuthorization,
     resolveApplicationInstance,
-    obtainConsent,
     errorLogging(),
   { required: true });
 };
