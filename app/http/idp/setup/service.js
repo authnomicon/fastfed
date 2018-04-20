@@ -1,9 +1,9 @@
-exports = module.exports = function(promptHandler, decisionHandler) {
+exports = module.exports = function(applicationPromptHandler, applicationDecisionHandler) {
   var express = require('express');
   var router = new express.Router();
   
-  router.get('/application', promptHandler);
-  router.post('/application', decisionHandler);
+  router.get('/application', applicationPromptHandler);
+  router.post('/application', applicationDecisionHandler);
   
   return router;
 };
@@ -14,6 +14,6 @@ exports['@implements'] = [
 ];
 exports['@path'] = '/fastfed/setup';
 exports['@require'] = [
-  './handlers/prompt',
-  './handlers/decision'
+  './handlers/application/prompt',
+  './handlers/application/decision'
 ];

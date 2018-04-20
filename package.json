@@ -36,7 +36,7 @@
       "http/idp/handshake/ceremony/start",
       "http/idp/handshake/ceremony/finish",
       "http/idp/setup/service",
-      "http/idp/setup/ceremony",
+      "http/idp/setup/ceremony/application",
       "http/application/handshake/service",
       "http/application/handshake/ceremony/receive",
       "http/application/setup/service",
