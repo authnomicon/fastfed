@@ -3,10 +3,6 @@ exports = module.exports = function() {
 
 
   function redirect(req, res, next) {
-    console.log('******* FINISH: fastfed-handshake-receipt');
-    console.log(req.body)
-    console.log(req.state);
-    
     var url = uri.parse('/fastfed/handshake/finish', true);
     delete url.search;
     //console.log(url);

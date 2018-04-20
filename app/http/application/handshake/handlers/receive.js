@@ -56,7 +56,7 @@ exports = module.exports = function(imd, md, ceremony, initialize, authenticate,
   }
   
   
-  return ceremony('fastfed-handshake-receipt',
+  return ceremony('fastfed/handshake/receive',
     authenticate([ 'session', 'anonymous' ]),
     initialize(),
     resolveIdP,

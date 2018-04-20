@@ -5,10 +5,6 @@ exports = module.exports = function() {
   // TODO: set up any authorization grants for the Idp?
 
   function redirect(req, res, next) {
-    console.log('******* RESUME: fastfed-handshake-receipt');
-    console.log(req.body)
-    console.log(req.state);
-    
     //console.log('RESUME FASTFED HANDSHAKE RECEIPT');
     //console.log(req.locals);
     //console.log(req.state);
