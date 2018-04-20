@@ -1,7 +1,7 @@
-exports = module.exports = function(begin, resume) {
+exports = module.exports = function(spawn, resume) {
   
   return {
-    spawn: begin,
+    spawn: spawn,
     resume: resume
   };
 };
@@ -9,6 +9,6 @@ exports = module.exports = function(begin, resume) {
 exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
 exports['@name'] = 'fastfed-handshake-finish';
 exports['@require'] = [
-  './finish/begin',
+  './finish/spawn',
   './finish/resume'
 ];

@@ -3,23 +3,16 @@ exports = module.exports = function(store) {
 
 
   function redirect(req, res, next) {
-    //console.log('START FASTFED HANDSHAKE FINISH');
-    //console.log(req.locals);
-    //console.log(req.state);
-    
-    
     var url = uri.parse(req.locals.receiveURI, true);
     delete url.search;
-    //console.log(url);
-    
     url.query.provider_metadata_uri = req.locals.metadataURI;
+    url.query.instance_metadata_uri = req.locals.instanceMetadataURI;
     
-    
-    url = uri.format(url);
-    //console.log(url);
-    
+    // TODO: Put instance ID in state?
     
     req.state.touch();
+    
+    url = uri.format(url);
     res.redirect(url);
   }
 
