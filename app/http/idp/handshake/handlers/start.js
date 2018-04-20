@@ -20,8 +20,6 @@ exports = module.exports = function(md, initialize, authenticate, errorLogging, 
     
     md.resolveApplication(metadataURI, function(err, provider) {
       if (err) { return next(err); }
-      
-      //req.state = req.state || { name: 'fastfed-handshake' };
       //req.state.provider = provider;
       next();
     });
@@ -30,7 +28,7 @@ exports = module.exports = function(md, initialize, authenticate, errorLogging, 
   
   // http://127.0.0.1:8080/fastfed/handshake/start?provider_metadata_uri=foo
   
-  return ceremony('fastfed-handshake',
+  return ceremony('fastfed/handshake/start',
     authenticate([ 'session', 'anonymous' ]),
     initialize(),
     resolveApplication,

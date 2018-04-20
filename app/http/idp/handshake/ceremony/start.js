@@ -8,7 +8,7 @@ exports = module.exports = function(prompt, resume, exit) {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/ceremony/Prompt';
-exports['@name'] = 'fastfed-handshake';
+exports['@name'] = 'fastfed/handshake/start';
 exports['@require'] = [
   './start/prompt',
   './start/resume',
