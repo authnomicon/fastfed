@@ -1,4 +1,5 @@
 exports = module.exports = function(parse, authenticate, errorLogging, ceremony) {
+  // TODO: remove these requires
   var path = require('path')
     , ejs = require('ejs')
   
