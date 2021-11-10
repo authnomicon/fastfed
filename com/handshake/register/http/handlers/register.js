@@ -55,7 +55,15 @@ exports = module.exports = function(imd, md, ceremony, initialize, authenticate,
     });
   }
   
+  function go(req, res, next) {
+    res.redirect('/ok');
+  }
   
+  return [
+    go
+  ];
+  
+  /*
   return ceremony('fastfed/handshake/receive',
     authenticate([ 'session', 'anonymous' ]),
     initialize(),
@@ -64,6 +72,7 @@ exports = module.exports = function(imd, md, ceremony, initialize, authenticate,
     resolveIdPInstance,
     errorLogging(),
   { external: true });
+  */
 };
 
 exports['@require'] = [
