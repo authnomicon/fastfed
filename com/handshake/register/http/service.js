@@ -1,17 +1,14 @@
-exports = module.exports = function(receiveHandler) {
+exports = module.exports = function(registerHandler) {
   var express = require('express');
   var router = new express.Router();
   
-  router.get('/receive', receiveHandler);
+  router.get('/register', registerHandler);
   
   return router;
 };
 
-exports['@implements'] = [
-  'http://i.bixbyjs.org/http/Service',
-  'http://schemas.authnomicon.org/js/http/fastfed/ApplicationHandshakeService'
-];
-exports['@path'] = '/fastfed/handshake';
+exports['@implements'] = 'http://i.bixbyjs.org/http/Service';
+exports['@path'] = '/fastfed/register';
 exports['@require'] = [
   './handlers/receive'
 ];

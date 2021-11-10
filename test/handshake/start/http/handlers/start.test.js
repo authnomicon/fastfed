@@ -6,7 +6,7 @@ var sinon = require('sinon');
 var factory = require('../../../../../com/handshake/start/http/handlers/start');
 
 
-describe.only('handshake/start/http/handlers/start', function() {
+describe('handshake/start/http/handlers/start', function() {
   
   var handler;
   
