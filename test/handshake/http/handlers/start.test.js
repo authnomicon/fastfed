@@ -3,7 +3,7 @@
 var expect = require('chai').expect;
 var chai = require('chai');
 var sinon = require('sinon');
-var factory = require('../../../../../com/handshake/start/http/handlers/start');
+var factory = require('../../../../com/handshake/http/handlers/start');
 
 
 describe('handshake/start/http/handlers/start', function() {

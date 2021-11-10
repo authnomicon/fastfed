@@ -1,6 +1,6 @@
 exports = module.exports = function(md, service, authenticate, state) {
-  var Request = require('../../../../../lib/request')
-    , Response = require('../../../../../lib/response');
+  var Request = require('../../../../lib/request')
+    , Response = require('../../../../lib/response');
   
   
   // TODO: if not authenticated, redirect to login url, with return_to
