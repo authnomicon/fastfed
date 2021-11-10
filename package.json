@@ -31,7 +31,7 @@
   "main": "./app",
   "assembly": {
     "namespace": "org.authnomicon/fastfed",
-    "components": [
+    "x_components": [
       "http/idp/handshake/service",
       "http/idp/handshake/ceremony/start",
       "http/idp/handshake/ceremony/finish",
