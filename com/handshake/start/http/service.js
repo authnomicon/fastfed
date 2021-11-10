@@ -8,11 +8,8 @@ exports = module.exports = function(startHandler, finishHandler) {
   return router;
 };
 
-exports['@implements'] = [
-  'http://i.bixbyjs.org/http/Service',
-  'http://schemas.authnomicon.org/js/http/fastfed/IdPHandshakeService'
-];
-exports['@path'] = '/fastfed/handshake';
+exports['@implements'] = 'http://i.bixbyjs.org/http/Service';
+exports['@path'] = '/fastfed/start';  // /fastfed/handshake/start?
 exports['@require'] = [
   './handlers/start',
   './handlers/finish'

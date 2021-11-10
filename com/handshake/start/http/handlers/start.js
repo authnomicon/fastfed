@@ -1,4 +1,6 @@
-exports = module.exports = function(md, initialize, authenticate, errorLogging, ceremony) {
+exports = module.exports = function(md, service, authenticate, state) {
+  var Request = require('../../../../../lib/request')
+    , Response = require('../../../../../lib/response');
   
   
   // TODO: if not authenticated, redirect to login url, with return_to
@@ -12,7 +14,9 @@ exports = module.exports = function(md, initialize, authenticate, errorLogging, 
     
     // TODO: query params
     
-    var metadataURI = req.query.provider_metadata_uri // or from body
+    var metadataURI = req.query.app_metadata_uri;
+    var expiration = req.query.expiration;
+    // or from body
     // TODO: Fetch this metadata URI
     // TODO: enter a consent flow
     // TODO: Generate federation instance metadata
@@ -25,21 +29,48 @@ exports = module.exports = function(md, initialize, authenticate, errorLogging, 
     });
   }
   
+  function evaluate(req, res, next) {
+    // TODO: Add app metadata to azreq
+    var zreq = new Request(req.user)
+      , zres = new Response();
+      
+    function onprompt(name, options) {
+      // TODO: Replace this with prompts.dispatch(name,...)
+      var prompt = prompts.get(name);
+      if (!prompt) { return next(new Error("Unknown prompt '" + name + "'")); }
+    
+      // FIXME: Merge rather than overwrite
+      res.locals = options || {};
+      prompt(req, res, next);
+    }
+      
+      
+    function ondecision(result, scope) {
+      console.log('DECISION!');
+      console.log(result)
+      
+      // TODO: send registration request, display status page to user
+      // POST to app providers fastfed_handshake_register_uri
+    }
+      
+    zres.once('decision', ondecision);
+      
+    service(zreq, zres);
+  }
+  
   
   // http://127.0.0.1:8080/fastfed/handshake/start?provider_metadata_uri=foo
   
-  return ceremony('fastfed/handshake/start',
-    authenticate([ 'session', 'anonymous' ]),
-    initialize(),
-    resolveApplication,
-    errorLogging(),
-  { external: true });
+  return [
+    //authenticate([ 'session', 'anonymous' ]),
+    //resolveApplication,
+    evaluate
+  ];
 };
 
 exports['@require'] = [
   '../../../../metadata/main',
-  'http://i.bixbyjs.org/http/middleware/initialize',
+  'http://i.authnomicon.org/fastfed/AuthorizationService',
   'http://i.bixbyjs.org/http/middleware/authenticate',
-  'http://i.bixbyjs.org/http/middleware/errorLogging',
-  'http://i.bixbyjs.org/http/middleware/ceremony'
+  'http://i.bixbyjs.org/http/middleware/state'
 ];
