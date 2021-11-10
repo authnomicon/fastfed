@@ -51,6 +51,8 @@ exports = module.exports = function(md, service, authenticate, state) {
       
       // TODO: send registration request, display status page to user
       // POST to app providers fastfed_handshake_register_uri
+      
+      res.redirect('/status')
     }
       
     zres.once('decision', ondecision);

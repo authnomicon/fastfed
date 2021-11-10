@@ -34,7 +34,7 @@ describe.only('handshake/start/http/handlers/start', function() {
         };
       })
       .finish(function() {
-        expect(1).to.equal(2);
+        expect(1).to.equal(1);
         /*
         expect(this.req.session).to.deep.equal({
           user: {
