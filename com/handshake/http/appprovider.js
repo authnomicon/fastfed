@@ -8,7 +8,7 @@ exports = module.exports = function(registerHandler) {
 };
 
 exports['@implements'] = 'http://i.bixbyjs.org/http/Service';
-exports['@path'] = '/fastfed/register';
+exports['@path'] = '/fastfed';
 exports['@require'] = [
   './handlers/receive'
 ];
