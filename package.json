@@ -32,7 +32,8 @@
   "assembly": {
     "namespace": "org.authnomicon/fastfed",
     "components": [
-      "http/service"
+      "http/service",
+      "metadata/http/service"
     ],
     "x_components": [
       "http/idp/handshake/service",
