@@ -10,7 +10,7 @@ exports = module.exports = function() {
           phone: "+1-800-555-5555",
           email: "support@example.com"
         },
-        fastfed_handshake_start_uri: 'https://tenant-12345.idp.example.com/fastfed/start'
+        fastfed_handshake_start_uri: 'http://localhost:3000/fastfed/start'
       }
     };
     
