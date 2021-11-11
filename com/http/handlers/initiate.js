@@ -28,6 +28,11 @@ exports = module.exports = function(resolver, authenticate, state, csrfProtectio
   function obtainConfirmation(req, res, next) {
     console.log('CONFIRM IT');
     console.log(res.locals.idp);
+    
+    req.pushState({
+      idp: res.locals.idp
+    }, '/fastfed/initiate/confirm');
+    res.redirect('/fastfed/initiate/confirm');
   }
   
 
