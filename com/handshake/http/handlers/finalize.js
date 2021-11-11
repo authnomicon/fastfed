@@ -14,10 +14,6 @@ exports = module.exports = function(imd, md, ceremony, initialize, authenticate,
 };
 
 exports['@require'] = [
-  '../../../../instance-metadata/main',
-  '../../../../metadata/main',
-  'http://i.bixbyjs.org/http/middleware/ceremony',
-  'http://i.bixbyjs.org/http/middleware/initialize',
   'http://i.bixbyjs.org/http/middleware/authenticate',
   'http://i.bixbyjs.org/http/middleware/errorLogging'
 ];

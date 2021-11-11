@@ -34,6 +34,7 @@
     "components": [
       "resolver",
       "http/service",
+      "handshake/http/idprovider",
       "metadata/http/service"
     ],
     "x_components": [

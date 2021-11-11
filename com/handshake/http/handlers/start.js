@@ -71,7 +71,6 @@ exports = module.exports = function(md, service, authenticate, state) {
 };
 
 exports['@require'] = [
-  '../../../../metadata/main',
   'http://i.authnomicon.org/fastfed/AuthorizationService',
   'http://i.bixbyjs.org/http/middleware/authenticate',
   'http://i.bixbyjs.org/http/middleware/state'
