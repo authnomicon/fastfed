@@ -1,4 +1,4 @@
-exports = module.exports = function(md, service, authenticate, state) {
+exports = module.exports = function(service, resolver, authenticate, state) {
   var Request = require('../../../../lib/request')
     , Response = require('../../../../lib/response');
   
@@ -29,9 +29,30 @@ exports = module.exports = function(md, service, authenticate, state) {
     });
   }
   
+  function fetchMetadata(req, res, next) {
+    resolver.resolveAppProvider(req.query.app_metadata_uri, function(err, appProvider) {
+      if (err) { return next(err); }
+      
+      console.log('FETCHED APP');
+      console.log(err);
+      console.log(appProvider);
+      
+      // TODO: Verify compatibility
+      
+      
+      res.locals.appProvider = appProvider;
+      next();
+    });
+  }
+  
+  
   function evaluate(req, res, next) {
+    console.log('EVALUATING FAST FED START');
+    console.log(req.query)
+    console.log(req.state);
+    
     // TODO: Add app metadata to azreq
-    var zreq = new Request(req.user)
+    var zreq = new Request(res.locals.appProvider, req.user)
       , zres = new Response();
       
     function onprompt(name, options) {
@@ -52,7 +73,7 @@ exports = module.exports = function(md, service, authenticate, state) {
       // TODO: send registration request, display status page to user
       // POST to app providers fastfed_handshake_register_uri
       
-      res.redirect('/status')
+      //res.redirect('/status')
     }
       
     zres.once('decision', ondecision);
@@ -66,12 +87,15 @@ exports = module.exports = function(md, service, authenticate, state) {
   return [
     //authenticate([ 'session', 'anonymous' ]),
     //resolveApplication,
+    state(),
+    fetchMetadata,
     evaluate
   ];
 };
 
 exports['@require'] = [
   'http://i.authnomicon.org/fastfed/AuthorizationService',
+  'http://i.authnomicon.org/fastfed/Resolver',
   'http://i.bixbyjs.org/http/middleware/authenticate',
   'http://i.bixbyjs.org/http/middleware/state'
 ];

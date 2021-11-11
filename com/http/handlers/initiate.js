@@ -19,6 +19,7 @@ exports = module.exports = function(resolver, authenticate, state, csrfProtectio
       
       // TODO: Obtain confirmation
       
+      // TODO: Rename this to idProvider
       res.locals.idp = idp;
       next();
     });

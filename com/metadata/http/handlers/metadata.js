@@ -11,6 +11,10 @@ exports = module.exports = function() {
           email: "support@example.com"
         },
         fastfed_handshake_start_uri: 'http://localhost:3000/fastfed/start'
+      },
+      application_provider: {
+        entity_id: "https://tenant-67890.app.example.com/",
+        fastfed_handshake_register_uri: "http://localhost:3000/fastfed/register"
       }
     };
     
