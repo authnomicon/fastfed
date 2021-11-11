@@ -1,7 +1,7 @@
 exports = module.exports = function(resolver, authenticate, state, csrfProtection, parse) {
   
 
-  function go(req, res, next) {
+  function fetchMetadata(req, res, next) {
     console.log(req.body);
     //res.redirect('/');
     
@@ -11,8 +11,23 @@ exports = module.exports = function(resolver, authenticate, state, csrfProtectio
       console.log(err);
       console.log(idp);
       
+      // TODO: validate provider domain
+      // https://openid.net/specs/fastfed-core-1_0-ID1.html#HandshakeApplicationProviderReadsIdentityProviderMetadata
+      // https://openid.net/specs/fastfed-core-1_0-ID1.html#ProviderMetadataEndpointValidation
+      
+      // TODO: Verify compatibility
+      
+      // TODO: Obtain confirmation
+      
+      res.locals.idp = idp;
+      next();
     });
     
+  }
+  
+  function obtainConfirmation(req, res, next) {
+    console.log('CONFIRM IT');
+    console.log(res.locals.idp);
   }
   
 
@@ -23,7 +38,8 @@ exports = module.exports = function(resolver, authenticate, state, csrfProtectio
     state(),
     //authenticate('www-form/password'), // TODO: authentication
     // TODO: authorization
-    go
+    fetchMetadata,
+    obtainConfirmation
   ];
 };
 
